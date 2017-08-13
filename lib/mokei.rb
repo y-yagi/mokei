@@ -1,5 +1,5 @@
 require "mokei/version"
+require "mokei/builder/base"
 
 module Mokei
-  # Your code goes here...
 end
