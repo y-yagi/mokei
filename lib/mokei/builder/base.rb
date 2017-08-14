@@ -15,7 +15,7 @@ module Mokei
 
       def initialize
         target_class = determine_target(self.class.to_s)
-        @target = target_class.new if target_class && target_class
+        @target = target_class.new
       end
 
       def build
