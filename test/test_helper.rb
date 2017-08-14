@@ -13,6 +13,6 @@ ActiveRecord::Schema.define do
   end
 end
 
-require_relative "models/user"
-require_relative "builders/user_builder"
+Dir["test/models/**/*.rb"].each { |f| require File.expand_path(f) }
+Dir["test/builders/**/*.rb"].each { |f| require File.expand_path(f) }
 require "minitest/autorun"

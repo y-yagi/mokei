@@ -14,8 +14,8 @@ module Mokei
       end
 
       def initialize
-        target = determine_target(self.class.to_s)
-        @target = target.new if target && target != self.class
+        target_class = determine_target(self.class.to_s)
+        @target = target_class.new if target_class && target_class
       end
 
       def build
@@ -25,16 +25,7 @@ module Mokei
       private
 
       def determine_target(class_name)
-        names = class_name.split "::"
-        while names.size > 0 do
-          names.last.sub!(/Builder$/, "")
-          begin
-            constant = names.join("::").safe_constantize
-            break(constant) if Class === constant
-          ensure
-            names.pop
-          end
-        end
+        class_name.sub!(/Builder$/, "").constantize
       end
     end
   end
