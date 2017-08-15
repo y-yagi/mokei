@@ -22,6 +22,13 @@ module Mokei
         target
       end
 
+      def create!
+        raise NotImplementedError unless target.respond_to?(:save!)
+
+        target.save!
+        target
+      end
+
       private
 
       def determine_target(class_name)
