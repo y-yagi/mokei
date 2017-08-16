@@ -16,6 +16,7 @@ ActiveRecord::Schema.define do
   create_table :todos, force: true do |t|
     t.belongs_to :user
     t.string :title, null: false
+    t.datetime :expiration_at
   end
 end
 

@@ -22,6 +22,8 @@ class MokeiTest < Minitest::Test
     assert user.active
     assert user.persisted?
     assert user.todos.first.persisted?
+    assert user.todos.second.persisted?
+    assert_equal 2, user.todos.count
   end
 
   def test_target_class_does_not_exist

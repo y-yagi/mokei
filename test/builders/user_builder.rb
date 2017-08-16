@@ -10,5 +10,6 @@ class UserBuilder < Mokei::Builder::Base
 
   def with_todos
     todos.build(title: "support association")
+    todos << TodoBuilder.new.expired.build
   end
 end
