@@ -9,6 +9,6 @@ class UserBuilder < Mokei::Builder::Base
   end
 
   def with_todos
-    target.todos.build(title: "support association")
+    todos.build(title: "support association")
   end
 end
