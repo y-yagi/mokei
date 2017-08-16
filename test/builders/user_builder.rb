@@ -7,4 +7,8 @@ class UserBuilder < Mokei::Builder::Base
   def active
     target.active = true
   end
+
+  def with_todos
+    target.todos.build(title: "support association")
+  end
 end

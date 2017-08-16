@@ -12,6 +12,11 @@ ActiveRecord::Schema.define do
     t.string :email
     t.boolean :active, default: false
   end
+
+  create_table :todos, force: true do |t|
+    t.belongs_to :user
+    t.string :title, null: false
+  end
 end
 
 Dir["test/models/**/*.rb"].each { |f| require File.expand_path(f) }
