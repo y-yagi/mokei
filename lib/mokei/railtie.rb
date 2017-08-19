@@ -5,7 +5,8 @@ module Mokei
     initializer "mokei.set_builder_paths" do
       Mokei.builder_paths = [
         Rails.root.join("builders"),
-        Rails.root.join("test", "builders")
+        Rails.root.join("test", "builders"),
+        Rails.root.join("rspec", "builders")
       ]
     end
 
