@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/y-yagi/mokei.svg?branch=master)](https://travis-ci.org/y-yagi/mokei) [![Code Climate](https://codeclimate.com/github/y-yagi/mokei/badges/gpa.svg)](https://codeclimate.com/github/y-yagi/mokei)
 
-`Mokei` is a builder for Rails applications. It is mainly intended for use in test.
+`Mokei` is a builder library for Rails applications. It is mainly intended for use in test.
 
 ## Installation
 

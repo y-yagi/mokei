@@ -8,7 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yuji Yaginuma"]
   spec.email         = ["yuuji.yaginuma@gmail.com"]
 
-  spec.summary       = %q{WIP}
+  spec.summary       = %q{`Mokei` is a builder library for Rails applications.}
+  spec.homepage      = "https://github.com/y-yagi/mokei"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
