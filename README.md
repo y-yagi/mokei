@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/y-yagi/mokei.svg?branch=master)](https://travis-ci.org/y-yagi/mokei) [![Code Climate](https://codeclimate.com/github/y-yagi/mokei/badges/gpa.svg)](https://codeclimate.com/github/y-yagi/mokei)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mokei`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+`Mokei` is a builder for Rails applications. It is mainly intended for use in test.
 
 ## Installation
 
@@ -24,7 +22,60 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# migration file
+ActiveRecord::Schema.define do
+  create_table :users, force: true do |t|
+    t.string :name
+    t.string :email
+    t.boolean :active, default: false
+  end
+end
+
+# model
+class User < ActiveRecord::Base
+end
+```
+
+```ruby
+# builder
+# test/builders/user_builder.rb
+class UserBuilder < Mokei::Builder::Base
+  def dummy
+    target.email = "dummy@example.com"
+    target.name = "dummy account"
+  end
+end
+```
+
+```
+user = UserBuilder.new.dummy.build
+=> #<User id: nil, name: "dummy account", email: "dummy@example.com", active: false, created_at: nil, updated_at: nil>
+```
+
+By calling the `build` method you can get the object to build. Within the builder class, you can use the object to be built with `target`.
+
+Also, the method defined for the builder is chainable.
+
+```ruby
+# builder
+# test/builders/user_builder.rb
+class UserBuilder < Mokei::Builder::Base
+  def dummy
+    target.email = "dummy@example.com"
+    target.name = "dummy account"
+  end
+
+  def registered
+    target.active = true
+  end
+end
+```
+
+```
+user = UserBuilder.new.dummy.registered.build
+=> #<User id: nil, name: "dummy account", email: "dummy@example.com", active: true, created_at: nil, updated_at: nil>
+```
 
 ## Development
 
