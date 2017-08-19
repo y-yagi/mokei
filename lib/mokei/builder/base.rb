@@ -29,18 +29,6 @@ module Mokei
         target
       end
 
-      def respond_to_missing?(name, include_private = false)
-        target.respond_to?(name) || super
-      end
-
-      def method_missing(method, *args, &block)
-        if target.respond_to?(method)
-          target.public_send(method, *args, &block)
-        else
-          super
-        end
-      end
-
       private
 
       def determine_target(class_name)
