@@ -1,6 +1,6 @@
 # Mokei
 
-[![Build Status](https://travis-ci.org/y-yagi/mokei.svg?branch=master)](https://travis-ci.org/y-yagi/mokei) [![Code Climate](https://codeclimate.com/github/y-yagi/mokei/badges/gpa.svg)](https://codeclimate.com/github/y-yagi/mokei)
+[![Build Status](https://travis-ci.org/y-yagi/mokei.svg?branch=master)](https://travis-ci.org/y-yagi/mokei) [![Code Climate](https://codeclimate.com/github/y-yagi/mokei/badges/gpa.svg)](https://codeclimate.com/github/y-yagi/mokei) [![Gem Version](https://badge.fury.io/rb/mokei.svg)](http://badge.fury.io/rb/mokei)
 
 `Mokei` is a builder library for Rails applications. It is mainly intended for use in test.
 
