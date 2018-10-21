@@ -11,3 +11,8 @@ gemfile:
   - gemfiles/rails_edge.gemfile
 before_install:
   - gem install bundler
+
+matrix:
+  exclude:
+    - rvm: 2.3
+      gemfile: gemfiles/rails_edge.gemfile
